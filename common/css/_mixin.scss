@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* mixin
+*********************************************************************/
+/* カラー */
+$main: #271510;
+$over: #d1803a;
+$bg01: #EEEDEC;
+
+/* media query */
+$portrait: 480; /* SP縦から */
+$landscape: 896; /* SP横から */
+$tablet: 1025; /* タブレット縦から */
+$fwxga: 1400; /* フルワイド */
+$w1280: 1280; /* 1280 */
+
+@mixin media($mediaSize){
+  @if $mediaSize == tablet{
+    @media all and (max-width: $tablet + px) {
+      @content
+    }
+  }
+ 
+  @else if $mediaSize == landscape{
+    @media all and (max-width: $landscape + px) {
+      @content
+    }
+  }
+ 
+  @else if $mediaSize == portrait{
+    @media all and (max-width: $portrait + px) {
+      @content
+    }
+  }
+ 
+  @else if $mediaSize == fwxga{
+    @media all and (max-width: $fwxga + px) {
+      @content
+    }
+  }
+  @else if $mediaSize == w1280{
+    @media all and (max-width: $w1280 + px) {
+      @content
+    }
+  }
+}
+
+//Font Family
+//////////////////////////////////////////////////////////
+@mixin font-min {
+  font-family:"Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", 'Noto Serif JP', "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+@mixin font-gothic {
+  font-family: 'Noto Sans JP', "游ゴシック", "Yu Gothic", YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, sans-serif;
+}
+
+@mixin font-en {
+  font-family: 'Roboto', sans-se
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
